@@ -21,11 +21,11 @@
     <integer name="config_maxVisibleNotificationIconsWhenDark">7</integer>
 
     <!-- The CPU temperature sensor path, defaults to empty -->
-    <string name="config_cpuTempSensor" translatable="false"></string>
+    <string name="config_cpuTempSensor" translatable="false">/sys/class/thermal/thermal_zone0/temp</string>
     <!-- The battery temperature divider, if needed -->
     <integer name="config_battTempDivider" translatable="false">10</integer>
     <!-- The CPU temperature divider, if needed -->
-    <integer name="config_cpuTempDivider" translatable="false">1</integer>
+    <integer name="config_cpuTempDivider" translatable="false">1000</integer>
     <!-- The CPUs to display in CPUInfoService view -->
     <string name="config_displayCpus" translatable="false"></string>
 
