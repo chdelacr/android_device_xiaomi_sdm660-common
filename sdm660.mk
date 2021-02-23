@@ -210,7 +210,7 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml \
     vendor.display.config@1.9 \
-    vendor.display.config@1.9_vendor
+    vendor.display.config@1.9.vendor
 
 # DeviceDoze
 PRODUCT_PACKAGES += \
