@@ -67,6 +67,9 @@ on post-fs
 
     write /sys/class/graphics/fb0/idle_time 100
 
+on late-fs
+    start themed_bootanimation
+    
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -609,6 +612,7 @@ service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     capabilities BLOCK_SUSPEND
     ioprio rt 4
     writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
+    socket audio_hw_socket seqpacket 0666 system system
     onrestart restart audioserver
 
 on property:dev.bootcomplete=1

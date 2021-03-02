@@ -18,6 +18,9 @@
 /sys/devices/soc/soc:fpc1020(/.*)?                                                                                          u:object_r:fingerprint_sysfs:s0
 /sys/bus/platform/devices/soc:fingerprint_fpc(/.*)?                                                                         u:object_r:fingerprint_sysfs:s0
 
+# Debugfs
+/sys/kernel/debug/system_stats                                                                                              u:object_r:debugfs:s0
+
 # Goodix Fingerprint
 /data/misc/gf_data(/.*)?                                                                                                    u:object_r:fingerprint_data_file:s0
 /data/misc/goodix(/.*)?                                                                                                     u:object_r:fingerprint_data_file:s0
@@ -69,6 +72,9 @@
 
 # Service HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.authsecret@1\.0-service                                                   u:object_r:hal_authsecret_default_exec:s0
+
+# Sockets
+/dev/socket/audio_hw_socket                                                                                                 u:object_r:audio_socket:s0
 
 # Tap to Wake
 /sys/devices/soc/c177000.i2c/i2c-3/3-005d/enable_dt2w                                                                       u:object_r:sysfs_tap_to_wake:s0

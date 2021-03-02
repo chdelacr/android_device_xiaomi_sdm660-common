@@ -1,6 +1,3 @@
-#Build FP to be picked by both system and vendor
-BUILD_FINGERPRINT := "xiaomi/wayne/wayne:8.1.0/OPM1.171019.011/V9.5.11.0.ODCCNFA:user/release-keys"
-
 # Apex
 ifeq ($(ENABLE_APEX), true)
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -36,7 +33,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=25 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.sdk.ssr=false \
-    vendor.audio.adm.buffering.ms=12 \
     vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio.flac.sw.decoder.24bit=true \
@@ -61,6 +57,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio Feature
 PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.audio.adm.buffering.ms=3 \
     vendor.audio.feature.a2dp_offload.enable=false \
     vendor.audio.feature.afe_proxy.enable=true \
     vendor.audio.feature.anc_headset.enable=true \
@@ -160,17 +157,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.latch_unsignaled=0 \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=1 \
-    debug.sf.disable_backpressure=0 \
+    debug.sf.disable_backpressure= 1 \
     debug.sf.early_app_phase_offset_ns=1500000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000 \
     debug.sf.early_phase_offset_ns=1500000 \
-    debug.cpurend.vsync=true \
+    debug.cpurend.vsync=false \
     debug.hwui.use_buffer_age=false \
-    ro.opengles.version=196610 \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno \
     vendor.display.disable_skip_validate=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
-    vendor.display.enable_default_color_mode=0
+    vendor.display.enable_default_color_mode=0 \
+    vendor.opengles.version=196610
 
 # The default sf phase offset is set to 6ms, to avoid it be included into next
 # vsync threshold, set high fps early sf and next vsync threshold phase offset
@@ -233,8 +232,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # QCOM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1 \
-    persist.vendor.dpm.feature=1 \
-    persist.vendor.dpm.nsrm.bkg.evt=3955 \
     persist.vendor.qcomsysd.enabled=1 \
     ro.vendor.extension_library=libqti-perfd-client.so
 

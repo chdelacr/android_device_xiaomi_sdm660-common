@@ -13,8 +13,8 @@
   },
   {
     "remote"      : "github",
-    "repository"  : "xiaomi-sdm660/android_vendor_xiaomi_MiuiCamera",
-    "target_path" : "vendor/xiaomi/MiuiCamera",
-    "branch"      : "sdm660"
+    "repository"  : "xiaomi-sdm660/android_vendor_GoogleCamera",
+    "target_path" : "vendor/GoogleCamera",
+    "branch"      : "11"
   }
 ]
