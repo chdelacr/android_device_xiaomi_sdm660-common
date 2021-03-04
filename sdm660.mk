@@ -367,7 +367,7 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay \
-    $(COMMON_PATH)/overlay-pex \
+    $(COMMON_PATH)/overlay-kangos \
     $(COMMON_PATH)/overlay-lineage
 
 # RRO configuration
